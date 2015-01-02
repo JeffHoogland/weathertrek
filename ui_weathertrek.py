@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'weathertrek.ui'
 #
-# Created: Thu Jan  1 18:20:12 2015
+# Created: Fri Jan  2 00:34:00 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,7 +12,7 @@ from PySide import QtCore, QtGui
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(600, 528)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_3 = QtGui.QVBoxLayout(self.centralwidget)
@@ -49,6 +49,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addWidget(self.groupBox_2)
         self.verticalLayout_3.addWidget(self.frame)
         self.reportTab = QtGui.QTabWidget(self.centralwidget)
+        self.reportTab.setEnabled(False)
         self.reportTab.setObjectName("reportTab")
         self.todayTab = QtGui.QWidget()
         self.todayTab.setObjectName("todayTab")
@@ -58,7 +59,7 @@ class Ui_MainWindow(object):
         self.todayScroll.setWidgetResizable(True)
         self.todayScroll.setObjectName("todayScroll")
         self.todayScrollArea = QtGui.QWidget()
-        self.todayScrollArea.setGeometry(QtCore.QRect(0, 0, 758, 275))
+        self.todayScrollArea.setGeometry(QtCore.QRect(0, 0, 558, 203))
         self.todayScrollArea.setObjectName("todayScrollArea")
         self.todayLayout = QtGui.QVBoxLayout(self.todayScrollArea)
         self.todayLayout.setObjectName("todayLayout")
@@ -76,7 +77,7 @@ class Ui_MainWindow(object):
         self.tomorrowScroll.setWidgetResizable(True)
         self.tomorrowScroll.setObjectName("tomorrowScroll")
         self.tomorrowScrollArea = QtGui.QWidget()
-        self.tomorrowScrollArea.setGeometry(QtCore.QRect(0, 0, 758, 275))
+        self.tomorrowScrollArea.setGeometry(QtCore.QRect(0, 0, 558, 203))
         self.tomorrowScrollArea.setObjectName("tomorrowScrollArea")
         self.tomorrowLayout = QtGui.QVBoxLayout(self.tomorrowScrollArea)
         self.tomorrowLayout.setObjectName("tomorrowLayout")
@@ -94,7 +95,7 @@ class Ui_MainWindow(object):
         self.twoScroll.setWidgetResizable(True)
         self.twoScroll.setObjectName("twoScroll")
         self.twoScrollArea = QtGui.QWidget()
-        self.twoScrollArea.setGeometry(QtCore.QRect(0, 0, 758, 275))
+        self.twoScrollArea.setGeometry(QtCore.QRect(0, 0, 558, 203))
         self.twoScrollArea.setObjectName("twoScrollArea")
         self.twoLayout = QtGui.QVBoxLayout(self.twoScrollArea)
         self.twoLayout.setObjectName("twoLayout")
@@ -112,7 +113,7 @@ class Ui_MainWindow(object):
         self.threeScroll.setWidgetResizable(True)
         self.threeScroll.setObjectName("threeScroll")
         self.threeScrollArea = QtGui.QWidget()
-        self.threeScrollArea.setGeometry(QtCore.QRect(0, 0, 758, 275))
+        self.threeScrollArea.setGeometry(QtCore.QRect(0, 0, 558, 203))
         self.threeScrollArea.setObjectName("threeScrollArea")
         self.threeLayout = QtGui.QVBoxLayout(self.threeScrollArea)
         self.threeLayout.setObjectName("threeLayout")
@@ -130,7 +131,7 @@ class Ui_MainWindow(object):
         self.fourScroll.setWidgetResizable(True)
         self.fourScroll.setObjectName("fourScroll")
         self.fourScrollArea = QtGui.QWidget()
-        self.fourScrollArea.setGeometry(QtCore.QRect(0, 0, 758, 275))
+        self.fourScrollArea.setGeometry(QtCore.QRect(0, 0, 558, 203))
         self.fourScrollArea.setObjectName("fourScrollArea")
         self.fourLayout = QtGui.QVBoxLayout(self.fourScrollArea)
         self.fourLayout.setObjectName("fourLayout")
@@ -146,7 +147,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addWidget(self.startButton)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 29))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 29))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(MainWindow)
@@ -161,7 +162,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Weather Trek", None, QtGui.QApplication.UnicodeUTF8))
         self.startLabel.setText(QtGui.QApplication.translate("MainWindow", "Starting Location:", None, QtGui.QApplication.UnicodeUTF8))
         self.endLabel.setText(QtGui.QApplication.translate("MainWindow", "Ending Location:", None, QtGui.QApplication.UnicodeUTF8))
-        self.todayDate.setText(QtGui.QApplication.translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Date</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.todayDate.setText(QtGui.QApplication.translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Enter Data Above</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.reportTab.setTabText(self.reportTab.indexOf(self.todayTab), QtGui.QApplication.translate("MainWindow", "Today", None, QtGui.QApplication.UnicodeUTF8))
         self.tomorrowDate.setText(QtGui.QApplication.translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Date</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.reportTab.setTabText(self.reportTab.indexOf(self.tomorrowTab), QtGui.QApplication.translate("MainWindow", "Tomorrow", None, QtGui.QApplication.UnicodeUTF8))

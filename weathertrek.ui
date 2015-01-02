@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>600</width>
+    <height>528</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -67,6 +67,9 @@
     </item>
     <item>
      <widget class="QTabWidget" name="reportTab">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -85,15 +88,15 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>758</width>
-             <height>275</height>
+             <width>558</width>
+             <height>203</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="todayLayout">
             <item>
              <widget class="QLabel" name="todayDate">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Date&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Enter Data Above&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -118,8 +121,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>758</width>
-             <height>275</height>
+             <width>558</width>
+             <height>203</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="tomorrowLayout">
@@ -151,8 +154,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>758</width>
-             <height>275</height>
+             <width>558</width>
+             <height>203</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="twoLayout">
@@ -184,8 +187,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>758</width>
-             <height>275</height>
+             <width>558</width>
+             <height>203</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="threeLayout">
@@ -217,8 +220,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>758</width>
-             <height>275</height>
+             <width>558</width>
+             <height>203</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="fourLayout">
@@ -251,7 +254,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>600</width>
      <height>29</height>
     </rect>
    </property>
