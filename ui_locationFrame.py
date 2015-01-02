@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'locationFrame.ui'
 #
-# Created: Fri Jan  2 00:34:00 2015
+# Created: Fri Jan  2 08:53:10 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,12 +12,13 @@ from PySide import QtCore, QtGui
 class Ui_LocationFrame(object):
     def setupUi(self, LocationFrame):
         LocationFrame.setObjectName("LocationFrame")
-        LocationFrame.resize(434, 260)
+        LocationFrame.resize(434, 285)
         LocationFrame.setFrameShape(QtGui.QFrame.StyledPanel)
         LocationFrame.setFrameShadow(QtGui.QFrame.Raised)
         self.verticalLayout = QtGui.QVBoxLayout(LocationFrame)
         self.verticalLayout.setObjectName("verticalLayout")
         self.locationLabel = QtGui.QLabel(LocationFrame)
+        self.locationLabel.setOpenExternalLinks(True)
         self.locationLabel.setObjectName("locationLabel")
         self.verticalLayout.addWidget(self.locationLabel)
         self.lowerFrame = QtGui.QFrame(LocationFrame)
@@ -45,6 +46,9 @@ class Ui_LocationFrame(object):
         self.amDes = QtGui.QLabel(self.amFrame)
         self.amDes.setObjectName("amDes")
         self.verticalLayout_4.addWidget(self.amDes)
+        self.amPercChance = QtGui.QLabel(self.amFrame)
+        self.amPercChance.setObjectName("amPercChance")
+        self.verticalLayout_4.addWidget(self.amPercChance)
         self.horizontalLayout_3.addWidget(self.amFrame)
         self.tempFrame = QtGui.QFrame(self.lowerFrame)
         self.tempFrame.setFrameShape(QtGui.QFrame.StyledPanel)
@@ -77,6 +81,9 @@ class Ui_LocationFrame(object):
         self.pmDes = QtGui.QLabel(self.pmFrame)
         self.pmDes.setObjectName("pmDes")
         self.verticalLayout_6.addWidget(self.pmDes)
+        self.pmPercChance = QtGui.QLabel(self.pmFrame)
+        self.pmPercChance.setObjectName("pmPercChance")
+        self.verticalLayout_6.addWidget(self.pmPercChance)
         self.horizontalLayout_3.addWidget(self.pmFrame)
         self.verticalLayout.addWidget(self.lowerFrame)
 
@@ -88,8 +95,10 @@ class Ui_LocationFrame(object):
         self.locationLabel.setText(QtGui.QApplication.translate("LocationFrame", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Location</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.amTop.setText(QtGui.QApplication.translate("LocationFrame", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">AM</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.amDes.setText(QtGui.QApplication.translate("LocationFrame", "<html><head/><body><p align=\"center\">AM Description</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.amPercChance.setText(QtGui.QApplication.translate("LocationFrame", "AM Perc", None, QtGui.QApplication.UnicodeUTF8))
         self.tempHigh.setText(QtGui.QApplication.translate("LocationFrame", "<html><head/><body><p align=\"center\">Temp High</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.tempLow.setText(QtGui.QApplication.translate("LocationFrame", "<html><head/><body><p align=\"center\">Temp Low</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.pmTop.setText(QtGui.QApplication.translate("LocationFrame", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">PM</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.pmDes.setText(QtGui.QApplication.translate("LocationFrame", "<html><head/><body><p align=\"center\">PM Description</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.pmPercChance.setText(QtGui.QApplication.translate("LocationFrame", "PM Perc", None, QtGui.QApplication.UnicodeUTF8))
 

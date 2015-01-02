@@ -64,7 +64,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             "Snow Showers Late":"icons/snow.jpg",
                             "Mostly Cloudy":"icons/pm-cloudy.jpg",
                             "Flurries":"icons/snow.jpg",
-                            "NA":"icons/na.jpg"}
+                            "NA":"icons/na.jpg",
+                            "Freezing Rain":"icons/rain-to-snow.jpg",
+                            "Rain / Snow":"icons/rain-to-snow.jpg",
+                            "Light Rain":"icons/light-rain.jpg",
+                            "Mostly Clear":"icons/pm-clear.jpg",
+                            "Showers / Wind":"icons/rain.jpg",
+                            "PM Showers / Wind":"icons/rain.jpg",
+                            "Cloudy":"icons/pm-cloudy.jpg",
+                            "Scattered Flurries":"icons/snow.jpg",
+                            "Snow Shower":"icons/snow.jpg"}
         
         self.amIcons = {    "Partly Cloudy":"icons/am-cloudy.jpg",
                             "AM Clouds / PM Sun":"icons/am-cloudy.jpg",
@@ -80,7 +89,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             "Sunny":"icons/am-clear.jpg",
                             "Mostly Cloudy":"icons/am-cloudy.jpg",
                             "Flurries":"icons/snow.jpg",
-                            "NA":"icons/na.jpg"}
+                            "NA":"icons/na.jpg",
+                            "Mostly Sunny":"icons/am-clear.jpg",
+                            "AM Snow Showers":"icons/snow.jpg",
+                            "Freezing Rain":"icons/rain-to-snow.jpg",
+                            "Rain / Snow":"icons/rain-to-snow.jpg",
+                            "Light Rain":"icons/light-rain.jpg",
+                            "Mostly Clear":"icons/pm-clear.jpg",
+                            "Showers / Wind":"icons/rain.jpg",
+                            "PM Showers / Wind":"icons/rain.jpg",
+                            "Cloudy":"icons/pm-cloudy.jpg",
+                            "Scattered Flurries":"icons/snow.jpg",
+                            "Snow Shower":"icons/snow.jpg"}
         
         self.assignWidgets()
     
@@ -126,23 +146,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             for cast in self.full_weather_wc:
                 if "location" in cast:
                     self.dataLabels["today"].append(LocationFrame(self))
-                    self.setLabels(self.dataLabels["today"][curLbl], 0, cast)
+                    self.setLabels(self.dataLabels["today"][curLbl], 0, cast, self.zipcodes[curLbl])
                     self.todayLayout.addWidget(self.dataLabels["today"][curLbl])
                     
                     self.dataLabels["tomorrow"].append(LocationFrame(self))
-                    self.setLabels(self.dataLabels["tomorrow"][curLbl], 1, cast)
+                    self.setLabels(self.dataLabels["tomorrow"][curLbl], 1, cast, self.zipcodes[curLbl])
                     self.tomorrowLayout.addWidget(self.dataLabels["tomorrow"][curLbl])
                     
                     self.dataLabels["two"].append(LocationFrame(self))
-                    self.setLabels(self.dataLabels["two"][curLbl], 2, cast)
+                    self.setLabels(self.dataLabels["two"][curLbl], 2, cast, self.zipcodes[curLbl])
                     self.twoLayout.addWidget(self.dataLabels["two"][curLbl])
                     
                     self.dataLabels["three"].append(LocationFrame(self))
-                    self.setLabels(self.dataLabels["three"][curLbl], 3, cast)
+                    self.setLabels(self.dataLabels["three"][curLbl], 3, cast, self.zipcodes[curLbl])
                     self.threeLayout.addWidget(self.dataLabels["three"][curLbl])
                     
                     self.dataLabels["four"].append(LocationFrame(self))
-                    self.setLabels(self.dataLabels["four"][curLbl], 4, cast)
+                    self.setLabels(self.dataLabels["four"][curLbl], 4, cast, self.zipcodes[curLbl])
                     self.fourLayout.addWidget(self.dataLabels["four"][curLbl])
                 else:
                     for x in self.dataLabels:
@@ -156,8 +176,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.statusbar.showMessage("Please enter start and end locations.")
             self.messageBox("Please enter start and end locations.")
             
-    def setLabels( self, ourObject, dayNum, cast ):
-        ourObject.locationLabel.setText('<p align=\"center\"><span style=\" font-weight:600;\">%s</span></p>'%cast["location"]["name"])
+    def setLabels( self, ourObject, dayNum, cast, zipcode ):
+        ourObject.locationLabel.setText('<p align=\"center\"><span style=\" font-weight:600;\"><a href="http://www.weather.com/weather/5day/l/%s:4:US">%s</a></span></p>'%(zipcode, cast["location"]["name"]))
+        
+        #Set AM Icon
         ourObject.amDes.setText('<p align=\"center\">%s</p>'%cast["forecasts"][dayNum]["day"]["text"])
         if cast["forecasts"][dayNum]["day"]["text"] in self.amIcons:
             amPath = self.amIcons[cast["forecasts"][dayNum]["day"]["text"]]
@@ -167,6 +189,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         amIcon = QPixmap(amPath)
         ourObject.amLabel.setPixmap(amIcon)
         
+        #Set PM Icon
         ourObject.pmDes.setText('<p align=\"center\">%s</p>'%cast["forecasts"][dayNum]["night"]["text"])
         if cast["forecasts"][dayNum]["night"]["text"] in self.pmIcons:
             pmPath = self.pmIcons[cast["forecasts"][dayNum]["night"]["text"]]
@@ -178,6 +201,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         ourObject.tempHigh.setText('<p align=\"center\"><span style=\" font-weight:600;\">High:</span></p> <p align=\"center\">%s</p>'%(int(cast["forecasts"][dayNum]["high"])*1.8+32))
         ourObject.tempLow.setText('<p align=\"center\"><span style=\" font-weight:600;\">Low:</span></p> <p align=\"center\">%s</p>'%(int(cast["forecasts"][dayNum]["low"])*1.8+32))
+        ourObject.amPercChance.setText('<p align=\"center\"><span style=\" font-weight:600;\">Chance of Percip:</span></p> <p align=\"center\">%s</p>'%(cast["forecasts"][dayNum]["day"]["chance_precip"]))
+        ourObject.pmPercChance.setText('<p align=\"center\"><span style=\" font-weight:600;\">Chance of Percip:</span></p> <p align=\"center\">%s</p>'%(cast["forecasts"][dayNum]["night"]["chance_precip"]))
+        
     
     def messageBox( self, ourMessage, ourTitle="Trek Message" ):
 		msgBox = QMessageBox()

@@ -5,3 +5,6 @@ Depends on:
 - [pywapi](https://code.google.com/p/python-weather-api/)
 
 By: [Jeff Hoogland](http://www.jeffhoogland.com/)
+
+TODO:
+- Add hyperlinks to open 5 day on weather.com for a given zip code for further information

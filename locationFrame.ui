@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>434</width>
-    <height>260</height>
+    <height>285</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,6 +24,9 @@
     <widget class="QLabel" name="locationLabel">
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Location&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="openExternalLinks">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
@@ -75,6 +78,13 @@
           <widget class="QLabel" name="amDes">
            <property name="text">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;AM Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="amPercChance">
+           <property name="text">
+            <string>AM Perc</string>
            </property>
           </widget>
          </item>
@@ -143,6 +153,13 @@
           <widget class="QLabel" name="pmDes">
            <property name="text">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;PM Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="pmPercChance">
+           <property name="text">
+            <string>PM Perc</string>
            </property>
           </widget>
          </item>
