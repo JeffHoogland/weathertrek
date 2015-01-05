@@ -1,5 +1,7 @@
 A tool written in Python and Qt for looking at weather while traveling between cities in the US
 
+![alt text](https://raw.githubusercontent.com/JeffHoogland/weathertrek/master/screenshots/weathertrek-main.png "Weather Trek")
+
 By: [Jeff Hoogland](http://www.jeffhoogland.com/)
 
 Install instructions:
