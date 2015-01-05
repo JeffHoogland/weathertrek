@@ -89,7 +89,7 @@
              <x>0</x>
              <y>0</y>
              <width>558</width>
-             <height>203</height>
+             <height>183</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="todayLayout">
@@ -121,8 +121,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>203</height>
+             <width>64</width>
+             <height>39</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="tomorrowLayout">
@@ -154,8 +154,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>203</height>
+             <width>64</width>
+             <height>39</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="twoLayout">
@@ -187,8 +187,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>203</height>
+             <width>64</width>
+             <height>39</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="threeLayout">
@@ -220,8 +220,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>203</height>
+             <width>64</width>
+             <height>39</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="fourLayout">
@@ -241,10 +241,42 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="startButton">
-      <property name="text">
-       <string>Get Weather</string>
+     <widget class="QFrame" name="frame_2">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QPushButton" name="startButton">
+         <property name="text">
+          <string>Get Weather</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="refreshButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Refresh</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="clearButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Clear Trip</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>

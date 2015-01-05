@@ -2,7 +2,6 @@ import sys
 import os
 import platform
 import datetime
-import cPickle as pickle
 
 #Google Maps module
 # https://github.com/swistakm/python-gmaps
@@ -126,8 +125,39 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         self.assignWidgets()
     
-    def workingMessage( self ):
+    def statusMessageUpdate( self, ourText ):
+        if ourText == "Working...":
+            self.getWeather()
+        elif ourText == "Refreshing...":
+            self.clearData()
+            self.getWeather()
+    
+    def startButtonPressed( self ):
         self.statusbar.showMessage("Working...")
+        
+    def refreshButtonPressed( self ):
+        self.statusbar.showMessage("Refreshing...")
+    
+    def clearButtonPressed( self ):
+        self.clearData( True )
+        
+    def clearData( self, disable=False ):
+        for day in self.dataLabels:
+            for ourObject in self.dataLabels[day]:
+                ourObject.hide()
+            
+            self.dataLabels[day][:] = []
+        
+        #Clear old data
+        self.full_weather_y[:] = []
+        self.full_weather_wc[:] = []
+        
+        if disable:
+            self.reportTab.setEnabled(False)
+            self.refreshButton.setEnabled(False)
+            self.clearButton.setEnabled(False)
+            self.todayDate.setText("<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Enter Data Above</span></p></body></html>")
+            self.reportTab.setCurrentIndex(0)
     
     def getWeather( self ):
         startLocation = self.startText.text()
@@ -152,7 +182,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         if results[0]['address_components'][i]["short_name"] not in self.zipcodes:
                             self.zipcodes.append(results[0]['address_components'][i]["short_name"])
             
-            self.statusbar.showMessage("Getting weather...")
             for zippy in self.zipcodes:
                 #self.full_weather_y.append(pywapi.get_weather_from_yahoo(zippy))
                 self.full_weather_wc.append(pywapi.get_weather_from_weather_com(zippy))
@@ -192,8 +221,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 
                 curLbl += 1
             
-            self.statusbar.showMessage("Done.")
+            self.statusbar.showMessage("Done")
             self.reportTab.setEnabled(True)
+            self.refreshButton.setEnabled(True)
+            self.clearButton.setEnabled(True)
         else:
             self.statusbar.showMessage("Please enter start and end locations.")
             self.messageBox("Please enter start and end locations.")
@@ -234,8 +265,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 		msgBox.exec_()
     
     def assignWidgets( self ):
-        self.startButton.clicked.connect(self.workingMessage)
-        self.startButton.clicked.connect(self.getWeather)
+        self.startButton.clicked.connect(self.startButtonPressed)
+        self.refreshButton.clicked.connect(self.refreshButtonPressed)
+        self.clearButton.clicked.connect(self.clearButtonPressed)
+        
+        self.statusbar.messageChanged.connect(self.statusMessageUpdate)
 
 #Custom object to allow sorting by number and alpha
 class TreeWidgetItem( QTreeWidgetItem ):

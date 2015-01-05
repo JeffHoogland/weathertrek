@@ -1,5 +1,5 @@
 start_location = "Bloomington, IL"
-end_location = "Columbus, OH"
+end_location = "Alsip, IL"
 
 daysout = 5
 
@@ -24,12 +24,25 @@ positions = []
 #holds the zipcodes of all the end points in our directions
 zipcodes = []
 
+'''overview_polyline
+warnings
+bounds
+waypoint_order
+summary
+copyrights
+legs
+'''
+
+for i in directions["legs"][0]["steps"]:
+    print i
+    
+
 for i in range(len(directions["legs"][0]["steps"])):
     positions.append(directions["legs"][0]["steps"][i]["end_location"])
 
 #print positions
 
-for pos in positions:
+'''for pos in positions:
     results = Geocoding(sensor=False).reverse(lat=pos["lat"], lon=pos["lng"])
     for i in range(len(results[0]['address_components'])):
         if results[0]['address_components'][i]["types"][0] == "postal_code":
@@ -37,8 +50,8 @@ for pos in positions:
                 zipcodes.append(results[0]['address_components'][i]["short_name"])
             
 print zipcodes
-
-full_weather_y = []
+'''
+'''full_weather_y = []
 full_weather_wc = []
 
 for zippy in zipcodes:
@@ -59,7 +72,7 @@ for cast in full_weather_y:
         print cast
         print ""
 
-'''print "Weather.com report"
+print "Weather.com report"
 print ""
 for cast in full_weather_wc:
     #Weather.com prints

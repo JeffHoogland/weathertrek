@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'weathertrek.ui'
 #
-# Created: Fri Jan  2 08:53:10 2015
+# Created: Mon Jan  5 11:58:41 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -59,7 +59,7 @@ class Ui_MainWindow(object):
         self.todayScroll.setWidgetResizable(True)
         self.todayScroll.setObjectName("todayScroll")
         self.todayScrollArea = QtGui.QWidget()
-        self.todayScrollArea.setGeometry(QtCore.QRect(0, 0, 558, 203))
+        self.todayScrollArea.setGeometry(QtCore.QRect(0, 0, 558, 183))
         self.todayScrollArea.setObjectName("todayScrollArea")
         self.todayLayout = QtGui.QVBoxLayout(self.todayScrollArea)
         self.todayLayout.setObjectName("todayLayout")
@@ -77,7 +77,7 @@ class Ui_MainWindow(object):
         self.tomorrowScroll.setWidgetResizable(True)
         self.tomorrowScroll.setObjectName("tomorrowScroll")
         self.tomorrowScrollArea = QtGui.QWidget()
-        self.tomorrowScrollArea.setGeometry(QtCore.QRect(0, 0, 558, 203))
+        self.tomorrowScrollArea.setGeometry(QtCore.QRect(0, 0, 64, 39))
         self.tomorrowScrollArea.setObjectName("tomorrowScrollArea")
         self.tomorrowLayout = QtGui.QVBoxLayout(self.tomorrowScrollArea)
         self.tomorrowLayout.setObjectName("tomorrowLayout")
@@ -95,7 +95,7 @@ class Ui_MainWindow(object):
         self.twoScroll.setWidgetResizable(True)
         self.twoScroll.setObjectName("twoScroll")
         self.twoScrollArea = QtGui.QWidget()
-        self.twoScrollArea.setGeometry(QtCore.QRect(0, 0, 558, 203))
+        self.twoScrollArea.setGeometry(QtCore.QRect(0, 0, 64, 39))
         self.twoScrollArea.setObjectName("twoScrollArea")
         self.twoLayout = QtGui.QVBoxLayout(self.twoScrollArea)
         self.twoLayout.setObjectName("twoLayout")
@@ -113,7 +113,7 @@ class Ui_MainWindow(object):
         self.threeScroll.setWidgetResizable(True)
         self.threeScroll.setObjectName("threeScroll")
         self.threeScrollArea = QtGui.QWidget()
-        self.threeScrollArea.setGeometry(QtCore.QRect(0, 0, 558, 203))
+        self.threeScrollArea.setGeometry(QtCore.QRect(0, 0, 64, 39))
         self.threeScrollArea.setObjectName("threeScrollArea")
         self.threeLayout = QtGui.QVBoxLayout(self.threeScrollArea)
         self.threeLayout.setObjectName("threeLayout")
@@ -131,7 +131,7 @@ class Ui_MainWindow(object):
         self.fourScroll.setWidgetResizable(True)
         self.fourScroll.setObjectName("fourScroll")
         self.fourScrollArea = QtGui.QWidget()
-        self.fourScrollArea.setGeometry(QtCore.QRect(0, 0, 558, 203))
+        self.fourScrollArea.setGeometry(QtCore.QRect(0, 0, 64, 39))
         self.fourScrollArea.setObjectName("fourScrollArea")
         self.fourLayout = QtGui.QVBoxLayout(self.fourScrollArea)
         self.fourLayout.setObjectName("fourLayout")
@@ -142,9 +142,24 @@ class Ui_MainWindow(object):
         self.fourLayoutMain.addWidget(self.fourScroll)
         self.reportTab.addTab(self.fourTab, "")
         self.verticalLayout_3.addWidget(self.reportTab)
-        self.startButton = QtGui.QPushButton(self.centralwidget)
+        self.frame_2 = QtGui.QFrame(self.centralwidget)
+        self.frame_2.setFrameShape(QtGui.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtGui.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.horizontalLayout_3 = QtGui.QHBoxLayout(self.frame_2)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.startButton = QtGui.QPushButton(self.frame_2)
         self.startButton.setObjectName("startButton")
-        self.verticalLayout_3.addWidget(self.startButton)
+        self.horizontalLayout_3.addWidget(self.startButton)
+        self.refreshButton = QtGui.QPushButton(self.frame_2)
+        self.refreshButton.setEnabled(False)
+        self.refreshButton.setObjectName("refreshButton")
+        self.horizontalLayout_3.addWidget(self.refreshButton)
+        self.clearButton = QtGui.QPushButton(self.frame_2)
+        self.clearButton.setEnabled(False)
+        self.clearButton.setObjectName("clearButton")
+        self.horizontalLayout_3.addWidget(self.clearButton)
+        self.verticalLayout_3.addWidget(self.frame_2)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 29))
@@ -173,4 +188,6 @@ class Ui_MainWindow(object):
         self.fourDate.setText(QtGui.QApplication.translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Date</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.reportTab.setTabText(self.reportTab.indexOf(self.fourTab), QtGui.QApplication.translate("MainWindow", "Four Days", None, QtGui.QApplication.UnicodeUTF8))
         self.startButton.setText(QtGui.QApplication.translate("MainWindow", "Get Weather", None, QtGui.QApplication.UnicodeUTF8))
+        self.refreshButton.setText(QtGui.QApplication.translate("MainWindow", "Refresh", None, QtGui.QApplication.UnicodeUTF8))
+        self.clearButton.setText(QtGui.QApplication.translate("MainWindow", "Clear Trip", None, QtGui.QApplication.UnicodeUTF8))
 
