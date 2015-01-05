@@ -1,0 +1,10 @@
+[Desktop Entry]
+Hidden=false
+Exec=weathertrek
+Type=Application
+Categories=Network;
+NoDisplay=false
+StartupNotify=true
+Comment=Weather tracking application
+Terminal=false
+Name=Weather Trek

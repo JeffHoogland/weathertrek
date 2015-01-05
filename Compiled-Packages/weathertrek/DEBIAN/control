@@ -1,0 +1,9 @@
+Package: weathertrek
+Version: 0.1
+Section: main
+Priority: optional
+Architecture: all
+Depends: python-pyside
+Maintainer: Jeff Hoogland
+Description: Weather Trek - A tool for looking at road trip weather
+ A tool written in python and Qt the view the weather along a travel route

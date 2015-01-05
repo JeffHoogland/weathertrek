@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /opt/weathertrek
+python weathertrek.py
