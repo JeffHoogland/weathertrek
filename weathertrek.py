@@ -73,7 +73,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             "PM Showers / Wind":"icons/rain.jpg",
                             "Cloudy":"icons/pm-cloudy.jpg",
                             "Scattered Flurries":"icons/snow.jpg",
-                            "Snow Shower":"icons/snow.jpg"}
+                            "Snow Shower":"icons/snow.jpg",
+                            "Mostly Clear / Wind":"icons/pm-clear.jpg",
+                            "Mostly Cloudy / Wind":"icons/pm-cloudy.jpg",
+                            "Cloudy / Wind":"icons/pm-cloudy.jpg",
+                            "Mostly Sunny / Wind":"icons/pm-clear.jpg",
+                            "Sunny / Wind":"icons/pm-clear.jpg",
+                            "Cloudy Early / Clearing Late / Wind":"icons/pm-clear.jpg",
+                            "PM Snow Showers":"icons/snow.jpg",
+                            "PM Snow":"icons/snow.jpg",
+                            "Snow Showers Early":"icons/snow.jpg",
+                            "Snow / Wind":"icons/snow.jpg",
+                            "AM Snow / Wind":"icons/snow.jpg"}
         
         self.amIcons = {    "Partly Cloudy":"icons/am-cloudy.jpg",
                             "AM Clouds / PM Sun":"icons/am-cloudy.jpg",
@@ -100,7 +111,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             "PM Showers / Wind":"icons/rain.jpg",
                             "Cloudy":"icons/pm-cloudy.jpg",
                             "Scattered Flurries":"icons/snow.jpg",
-                            "Snow Shower":"icons/snow.jpg"}
+                            "Snow Shower":"icons/snow.jpg",
+                            "Mostly Clear / Wind":"icons/am-clear.jpg",
+                            "Mostly Cloudy / Wind":"icons/am-cloudy.jpg",
+                            "Cloudy / Wind":"icons/am-cloudy.jpg",
+                            "Mostly Sunny / Wind":"icons/am-clear.jpg",
+                            "Sunny / Wind":"icons/am-clear.jpg",
+                            "Cloudy Early / Clearing Late / Wind":"icons/pm-clear.jpg",
+                            "PM Snow Showers":"icons/snow.jpg",
+                            "PM Snow":"icons/snow.jpg",
+                            "Snow Showers Early":"icons/snow.jpg",
+                            "Snow / Wind":"icons/snow.jpg",
+                            "AM Snow / Wind":"icons/snow.jpg"}
         
         self.assignWidgets()
     
