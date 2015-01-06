@@ -21,7 +21,7 @@ class Client(object):
     BASE_API_HTTP_URL = "http://maps.googleapis.com/maps/api/"
     BASE_API_HTTPS_URL = "https://maps.googleapis.com/maps/api/"
 
-    def __init__(self, sensor=False, api_key=None, use_https=True):
+    def __init__(self, sensor=False, api_key=None, use_https=False):
         self.sensor = sensor
         self.api_key = api_key
         if use_https:
