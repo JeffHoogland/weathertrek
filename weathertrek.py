@@ -83,7 +83,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             "PM Snow":"icons/snow.jpg",
                             "Snow Showers Early":"icons/snow.jpg",
                             "Snow / Wind":"icons/snow.jpg",
-                            "AM Snow / Wind":"icons/snow.jpg"}
+                            "PM Snow / Wind":"icons/snow.jpg",
+                            "PM Rain / Snow Showers":"icons/rain.jpg",
+                            "Rain / Snow Showers":"icons/rain.jpg"}
         
         self.amIcons = {    "Partly Cloudy":"icons/am-cloudy.jpg",
                             "AM Clouds / PM Sun":"icons/am-cloudy.jpg",
@@ -117,11 +119,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             "Mostly Sunny / Wind":"icons/am-clear.jpg",
                             "Sunny / Wind":"icons/am-clear.jpg",
                             "Cloudy Early / Clearing Late / Wind":"icons/am-clear.jpg",
-                            "PM Snow Showers":"icons/snow.jpg",
-                            "PM Snow":"icons/snow.jpg",
+                            "AM Snow Showers":"icons/snow.jpg",
+                            "AM Snow":"icons/snow.jpg",
                             "Snow Showers Early":"icons/snow.jpg",
                             "Snow / Wind":"icons/snow.jpg",
-                            "AM Snow / Wind":"icons/snow.jpg"}
+                            "AM Snow / Wind":"icons/snow.jpg",
+                            "AM Rain / Snow Showers":"icons/rain.jpg",
+                            "Rain / Snow Showers":"icons/rain.jpg"}
         
         self.assignWidgets()
     
